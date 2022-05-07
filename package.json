@@ -1,0 +1,41 @@
+{
+  "name": "ui-lib-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.11",
+    "@types/react": "^17.0.2",
+    "@types/styled-components": "^5.1.25",
+    "babel-loader": "^8.2.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-is": "^18.1.0",
+    "rollup": "^2.72.0",
+    "rollup-plugin-dts": "^4.2.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "styled-components": "^5.3.5",
+    "typescript": "^4.6.4"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "docs": "start-storybook -p 6006",
+    "build:docs": "build-storybook"
+  },
+  "dependencies": {
+    "@radix-ui/react-popover": "0.1.6"
+  }
+}
