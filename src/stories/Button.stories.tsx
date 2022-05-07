@@ -17,13 +17,6 @@ Default.args = {
   text: 'Default',
 };
 
-export const OnClick = Template.bind({});
-OnClick.args = {
-  disabled: false,
-  text: 'OnClick',
-  onClick: () => console.log('Clicked'),
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
