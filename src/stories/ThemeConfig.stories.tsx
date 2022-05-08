@@ -30,9 +30,9 @@ const ThemeConfig: React.FC<ThemeConfigProps> = ({
 
   return (
     <div>
-      <Button text="Primary" variant="primary" />
-      <Button text="Secondary" variant="secondary" />
-      <Button text="Danger" variant="danger" />
+      <Button text="Primary" intent="primary" />
+      <Button text="Secondary" intent="secondary" />
+      <Button text="Danger" intent="danger" />
     </div>
   );
 };

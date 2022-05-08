@@ -1,8 +1,8 @@
 import React, { MouseEventHandler, FC } from 'react';
 import loadingImg from '../assets/loading.svg';
 
-type IntentType = 'default' | 'success' | 'error' | undefined;
-type VariantType = 'primary' | 'secondary' | 'danger' | 'link' | undefined;
+type IntentType = 'primary' | 'secondary' | 'success' | 'danger' | undefined;
+type VariantType = 'filled' | 'outlined' | 'link' | undefined;
 
 export interface ButtonProps {
   intent?: IntentType;
@@ -14,22 +14,17 @@ export interface ButtonProps {
 }
 
 const variantConfig = {
-  primary: {
+  filled: {
     border: 'border-0',
     color: 'text-white',
-    backgroundColor: 'bg-primary',
     disabled:
       'disabled:text-slate-500 disabled:bg-slate-300 disabled:cursor-not-allowed',
   },
-  secondary: {
-    border: 'border-0',
-    color: 'text-white',
-    backgroundColor: 'bg-secondary',
-  },
-  danger: {
-    border: 'border-0',
-    color: 'text-white',
-    backgroundColor: 'bg-danger',
+  outlined: {
+    border: 'border-2',
+    backgroundColor: 'bg-inherit',
+    disabled:
+      'disabled:text-slate-300 disabled:border-slate-300 disabled:cursor-not-allowed',
   },
   link: {
     border: 'border-0',
@@ -40,26 +35,31 @@ const variantConfig = {
 };
 
 const intentConfig = {
-  default: {
-    color: 'text-blue-800',
-    borderColor: 'border-blue-800',
-    backgroundColor: 'bg-blue-800',
+  primary: {
+    color: 'text-primary',
+    borderColor: 'border-primary',
+    backgroundColor: 'bg-primary',
+  },
+  secondary: {
+    color: 'text-secondary',
+    borderColor: 'border-secondary',
+    backgroundColor: 'bg-secondary',
   },
   success: {
     color: 'text-green-400',
     borderColor: 'border-green-400',
     backgroundColor: 'bg-green-400',
   },
-  error: {
-    color: 'text-rose-500',
-    borderColor: 'border-rose-500',
+  danger: {
+    color: 'text-danger',
+    borderColor: 'border-danger',
     backgroundColor: 'bg-danger',
   },
 };
 
 const getButtonConfigs = ({
-  intent = 'default',
-  variant = 'primary',
+  intent = 'primary',
+  variant = 'filled',
 }: {
   intent: IntentType;
   variant: VariantType;
