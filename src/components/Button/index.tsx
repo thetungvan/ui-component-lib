@@ -1,39 +1,85 @@
 import React, { MouseEventHandler, FC } from 'react';
-import styled from 'styled-components';
+
+type IntentType = 'default' | 'success' | 'error' | undefined;
+type VariantType = 'primary' | 'secondary' | 'link' | undefined;
 
 export interface ButtonProps {
-  text?: string;
+  intent?: IntentType;
+  variant?: VariantType;
+  text: string;
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const StyledButton = styled.button<ButtonProps>`
-  border: 0;
-  line-height: 1;
-  font-size: 15px;
-  cursor: pointer;
-  font-weight: 700;
-  font-weight: bold;
-  border-radius: 3px;
-  display: inline-block;
-  padding: 9px 30px 11px;
-  color: #1b116e;
-  background-color: #6bedb5;
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-  &:hover {
-    background-color: #55bd90;
-  }
-  &:active {
-    border: solid 2px #1b116e;
-    padding: 7px 28px 9px;
-  }
-`;
+const variantConfig = {
+  primary: {
+    border: 'border-0',
+    color: 'text-white',
+  },
+  secondary: {
+    border: 'border-2',
+    backgroundColor: 'bg-inherit',
+  },
+  link: {
+    border: 'border-0',
+    backgroundColor: 'bg-inherit',
+    onHover: 'hover:underline hover:decoration-solid',
+  },
+};
 
-const Button: FC<ButtonProps> = ({ disabled, text, onClick }) => {
+const intentConfig = {
+  default: {
+    color: 'text-blue-800',
+    borderColor: 'border-blue-800',
+    backgroundColor: 'bg-blue-800',
+  },
+  success: {
+    color: 'text-green-400',
+    borderColor: 'border-green-400',
+    backgroundColor: 'bg-green-400',
+  },
+  error: {
+    color: 'text-rose-500',
+    borderColor: 'border-rose-500',
+    backgroundColor: 'bg-rose-500',
+  },
+};
+
+const getButtonConfigs = ({
+  intent = 'default',
+  variant = 'primary',
+}: {
+  intent: IntentType;
+  variant: VariantType;
+}) => {
+  const config = {
+    fontSize: 'text-base',
+    cursor: 'pointer',
+    borderRadius: 'rounded-lg',
+    padding: 'py-1 px-4',
+    ...intentConfig[intent],
+    ...variantConfig[variant],
+  };
+
+  return Object.values(config).join(' ');
+};
+
+const Button: FC<ButtonProps> = ({
+  disabled,
+  text,
+  onClick,
+  intent,
+  variant,
+}) => {
   return (
-    <StyledButton type="button" onClick={onClick} disabled={disabled}>
+    <button
+      className={getButtonConfigs({ intent, variant })}
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+    >
       {text}
-    </StyledButton>
+    </button>
   );
 };
 
