@@ -6,7 +6,7 @@ const TextArea: FC<TextAreaProps> = (props) => {
   return (
     <textarea
       {...props}
-      className="rounded px-2 text-base leading-none shadow shadow-current h-10"
+      className="rounded p-2 text-base leading-none shadow shadow-primary h-10"
     />
   );
 };

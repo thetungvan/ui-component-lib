@@ -6,7 +6,7 @@ const Input: FC<InputProps> = (props) => {
   return (
     <input
       {...props}
-      className="rounded px-2 text-base leading-none shadow shadow-current h-10"
+      className="rounded px-2 text-base leading-none shadow shadow-primary h-10"
     />
   );
 };

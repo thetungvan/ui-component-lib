@@ -17,14 +17,14 @@ const variantConfig = {
   primary: {
     border: 'border-0',
     color: 'text-white',
+    backgroundColor: 'bg-primary',
     disabled:
       'disabled:text-slate-500 disabled:bg-slate-300 disabled:cursor-not-allowed',
   },
   secondary: {
-    border: 'border-2',
-    backgroundColor: 'bg-inherit',
-    disabled:
-      'disabled:text-slate-300 disabled:border-slate-300 disabled:cursor-not-allowed',
+    border: 'border-0',
+    color: 'text-white',
+    backgroundColor: 'bg-secondary',
   },
   link: {
     border: 'border-0',
@@ -48,7 +48,7 @@ const intentConfig = {
   error: {
     color: 'text-rose-500',
     borderColor: 'border-rose-500',
-    backgroundColor: 'bg-rose-500',
+    backgroundColor: 'bg-danger',
   },
 };
 
