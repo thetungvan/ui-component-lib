@@ -19,15 +19,19 @@
     "@storybook/testing-library": "^0.0.11",
     "@types/react": "^17.0.2",
     "@types/styled-components": "^5.1.25",
+    "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "postcss": "^8.4.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^18.1.0",
     "rollup": "^2.72.0",
     "rollup-plugin-dts": "^4.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "styled-components": "^5.3.5",
+    "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4"
   },
   "scripts": {
@@ -36,6 +40,7 @@
     "build:docs": "build-storybook"
   },
   "dependencies": {
+    "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-popover": "0.1.6"
   }
 }
