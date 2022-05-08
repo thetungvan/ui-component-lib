@@ -6,7 +6,7 @@ Principles and Design Patterns of React Programming - batch01 - group13
 
 [x] Accessible: keyboard navigation, focus management, focus visibility
 
-[ ] Themable: change brand color
+[x] Themable: change brand color
 
 [x] TypeScript
 
