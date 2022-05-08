@@ -1,4 +1,5 @@
 import React, { MouseEventHandler, FC } from 'react';
+import loadingImg from '../assets/loading.svg';
 
 type IntentType = 'default' | 'success' | 'error' | undefined;
 type VariantType = 'primary' | 'secondary' | 'link' | undefined;
@@ -9,21 +10,27 @@ export interface ButtonProps {
   text: string;
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  loading?: boolean;
 }
 
 const variantConfig = {
   primary: {
     border: 'border-0',
     color: 'text-white',
+    disabled:
+      'disabled:text-slate-500 disabled:bg-slate-300 disabled:cursor-not-allowed',
   },
   secondary: {
     border: 'border-2',
     backgroundColor: 'bg-inherit',
+    disabled:
+      'disabled:text-slate-300 disabled:border-slate-300 disabled:cursor-not-allowed',
   },
   link: {
     border: 'border-0',
     backgroundColor: 'bg-inherit',
     onHover: 'hover:underline hover:decoration-solid',
+    disabled: 'disabled:text-slate-400 disabled:cursor-not-allowed',
   },
 };
 
@@ -51,12 +58,15 @@ const getButtonConfigs = ({
 }: {
   intent: IntentType;
   variant: VariantType;
+  disabled: boolean;
 }) => {
   const config = {
     fontSize: 'text-base',
     cursor: 'pointer',
     borderRadius: 'rounded-lg',
     padding: 'py-1 px-4',
+    display: 'inline-flex',
+    alignItems: 'items-center',
     ...intentConfig[intent],
     ...variantConfig[variant],
   };
@@ -65,20 +75,22 @@ const getButtonConfigs = ({
 };
 
 const Button: FC<ButtonProps> = ({
-  disabled,
+  disabled = false,
   text,
   onClick,
   intent,
   variant,
+  loading = false,
 }) => {
   return (
     <button
-      className={getButtonConfigs({ intent, variant })}
+      className={getButtonConfigs({ intent, variant, disabled })}
       type="button"
       onClick={onClick}
       disabled={disabled}
     >
-      {text}
+      {loading ? <img src={loadingImg} className="w-[20px] mr-1" /> : null}
+      <span>{text}</span>
     </button>
   );
 };
