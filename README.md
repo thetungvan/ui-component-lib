@@ -2,9 +2,9 @@
 
 Principles and Design Patterns of React Programming - batch01 - group13
 
-[ ] Supported Components: TextField, Button, Popover
+[x] Supported Components: Input, Button, Popover
 
-[ ] Accessible: keyboard navigation, focus management, focus visibility
+[x] Accessible: keyboard navigation, focus management, focus visibility
 
 [ ] Themable: change brand color
 
