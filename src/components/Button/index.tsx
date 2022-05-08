@@ -2,7 +2,7 @@ import React, { MouseEventHandler, FC } from 'react';
 import loadingImg from '../assets/loading.svg';
 
 type IntentType = 'default' | 'success' | 'error' | undefined;
-type VariantType = 'primary' | 'secondary' | 'link' | undefined;
+type VariantType = 'primary' | 'secondary' | 'danger' | 'link' | undefined;
 
 export interface ButtonProps {
   intent?: IntentType;
@@ -25,6 +25,11 @@ const variantConfig = {
     border: 'border-0',
     color: 'text-white',
     backgroundColor: 'bg-secondary',
+  },
+  danger: {
+    border: 'border-0',
+    color: 'text-white',
+    backgroundColor: 'bg-danger',
   },
   link: {
     border: 'border-0',
